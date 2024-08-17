@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: df6b2e511d199514d83d15014a2bea40, type: 3}
   m_Name: kuznechik
   m_EditorClassIdentifier: 
-  name: kuznechik
   bpm: 130
   music: {fileID: 8300000, guid: 9c18ba12fbd21694e96a3d040126107a, type: 3}
+  chart: {fileID: 4900000, guid: b9fc3cf60b0c2d046b621de6b45f6bf2, type: 3}

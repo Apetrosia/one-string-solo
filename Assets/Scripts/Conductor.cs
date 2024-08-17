@@ -28,8 +28,10 @@ public class Conductor : MonoBehaviour
     // An AudioSource attached to this GameObject that will play the music.
     public AudioSource musicSource;
 
-    //Conductor instance
+    // Conductor instance
     public static Conductor instance;
+
+    public Note[] chart;
 
     void Awake()
     {
@@ -39,6 +41,9 @@ public class Conductor : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        // Get the chart of the song
+        chart = ChartReader.ReadChart(songData.chart);
+
         // Load the AudioSource attached to the Conductor GameObject
         musicSource = GetComponent<AudioSource>();
 
