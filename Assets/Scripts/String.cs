@@ -10,6 +10,8 @@ public class String : MonoBehaviour
     [SerializeField] private float minScaleY;
     private float displayHeight;
 
+    [SerializeField] private bool showLog;
+
     void Start()
     {
         posOffset = 5f;
@@ -20,7 +22,8 @@ public class String : MonoBehaviour
     {
         mousePosY = ToUnityCoordinates(Input.mousePosition.y) + posOffset;
         transform.localScale = new Vector3(0.1f, Mathf.Max(minScaleY, 0.5f * Mathf.Min(mousePosY, 9f) / 9f), 1f);
-        //Debug.Log(Input.mousePosition.y + " " + mousePosY + " " + Display.main.systemHeight  + " " + transform.position.y);
+        if (showLog)
+            Debug.Log(Input.mousePosition.y + " " + mousePosY + " " + Display.main.systemHeight  + " " + transform.position.y);
     }
 
     private float ToUnityCoordinates(float displayPos) => displayPos / displayHeight * 10f - 5f;
