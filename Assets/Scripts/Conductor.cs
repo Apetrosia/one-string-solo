@@ -84,7 +84,7 @@ public class Conductor : MonoBehaviour
 
         if (nextIndex < chart.Length && chart[nextIndex].beat < currentBeat)
         {
-            Debug.Log(chart[nextIndex].beat + " " + currentBeat);
+            //Debug.Log(chart[nextIndex].beat + " " + currentBeat);
             NoteMovement note = Instantiate(notePrefab, 
                 new Vector2(spawnPos.position.x, chart[nextIndex].position), 
                 Quaternion.identity).GetComponent<NoteMovement>();
