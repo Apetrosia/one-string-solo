@@ -9,6 +9,8 @@ public class String : MonoBehaviour
     private float mousePosY;
     [SerializeField] private float minScaleY;
     [SerializeField] private float maxScaleY;
+    [SerializeField] private GameObject[] notesLabels;
+    [SerializeField] private float[] Ycoords;
     private float displayHeight;
 
     private AudioSource source;
@@ -20,6 +22,11 @@ public class String : MonoBehaviour
         posOffset = 5f;
         displayHeight = Display.main.systemHeight;
         source = GetComponent<AudioSource>();
+
+        //for (int i = 0; i < notesLabels.Length; i++)
+            //notesLabels[i].transform.position = new Vector3(notesLabels[i].transform.position.x, Ycoords[i] * (displayHeight / 10f) + displayHeight / 2f, 0f);
+
+        showLog = true;
     }
 
     void Update()
