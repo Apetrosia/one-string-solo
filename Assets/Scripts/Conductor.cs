@@ -4,37 +4,38 @@ using UnityEngine;
 
 public class Conductor : MonoBehaviour
 {
+    [Header("Adjustable settings")]
     // Song data including bpm and audio
-    public SongData songData;
-
-    // Prefab of the note to spawn
-    public GameObject notePrefab;
+    [SerializeField] private SongData songData;
 
     // How many beats on the screen are showed
     public float beatsShownInAdvance;
 
+    // The offset to the first beat of the song in seconds
+    [SerializeField] private float firstBeatOffset;
+
+    [Header("Change in prefab")]
+
+    // Prefab of the note to spawn
+    [SerializeField] private GameObject notePrefab;
+
     public Transform spawnPos;
     public Transform removePos;
 
-    // The offset to the first beat of the song in seconds
-    public float firstBeatOffset;
-
-    public TextAsset notesPositionsFile;
-
-    [Header("Should be private later")]
-    // TODO: make all of the variables below private after the game works
+    [SerializeField] private TextAsset notesPositionsFile;
 
     // The number of seconds for each song beat
-    public float secPerBeat;
+    private float secPerBeat;
 
     // Current song position, in seconds
-    public float songPosition;
+    private float songPosition;
 
+    [Header("Don't touch pls")]
     // Current song position, in beats
     public float songPositionInBeats;
 
     // How many seconds have passed since the song started
-    public float dspSongTime;
+    private float dspSongTime;
 
     // An AudioSource attached to this GameObject that will play the music.
     public AudioSource musicSource;
@@ -45,7 +46,7 @@ public class Conductor : MonoBehaviour
     private Note[] chart;
 
     //the index of the next note to be spawned
-    public int nextIndex = 0;
+    private int nextIndex = 0;
 
     void Awake()
     {
@@ -96,6 +97,7 @@ public class Conductor : MonoBehaviour
         }
     }
 
+    // Reset conductor state and start playing music
     public void StartSong()
     {
         nextIndex = 0;

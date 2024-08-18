@@ -344,18 +344,6 @@ PrefabInstance:
       propertyPath: songData
       value: 
       objectReference: {fileID: 11400000, guid: acbc06ea73d920d43b3efe553940b4a7, type: 2}
-    - target: {fileID: 2343447368754716355, guid: 7b37ba3e0da51314783f26fea54ae416, type: 3}
-      propertyPath: spawnPos.x
-      value: -10
-      objectReference: {fileID: 0}
-    - target: {fileID: 2343447368754716355, guid: 7b37ba3e0da51314783f26fea54ae416, type: 3}
-      propertyPath: removePos.x
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 2343447368754716355, guid: 7b37ba3e0da51314783f26fea54ae416, type: 3}
-      propertyPath: beatsShownInAdvance
-      value: 3.5
-      objectReference: {fileID: 0}
     - target: {fileID: 3740693676928782621, guid: 7b37ba3e0da51314783f26fea54ae416, type: 3}
       propertyPath: m_Name
       value: Conductor
