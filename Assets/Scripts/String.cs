@@ -12,6 +12,7 @@ public class String : MonoBehaviour
     [SerializeField] private GameObject[] notesLabels;
     [SerializeField] private float[] Ycoords;
     private float displayHeight;
+    private GameManager gameManager;
 
     private AudioSource source;
 
@@ -22,6 +23,7 @@ public class String : MonoBehaviour
         posOffset = 5f;
         displayHeight = Display.main.systemHeight;
         source = GetComponent<AudioSource>();
+        gameManager = GameObject.FindAnyObjectByType<GameManager>();
 
         //for (int i = 0; i < notesLabels.Length; i++)
             //notesLabels[i].transform.position = new Vector3(notesLabels[i].transform.position.x, Ycoords[i] * (displayHeight / 10f) + displayHeight / 2f, 0f);
@@ -31,12 +33,15 @@ public class String : MonoBehaviour
 
     void Update()
     {
-        mousePosY = ToUnityCoordinates(Input.mousePosition.y) + posOffset;
-        transform.localScale = new Vector3(0.1f, Mathf.Max(minScaleY, 0.5f * Mathf.Min(mousePosY, 9f) / 9f), 1f);
-        if (Input.GetKeyDown(KeyCode.Space))
-            PluckString();
-        if (showLog)
-            Debug.Log(Input.mousePosition.y + " " + mousePosY + " " + Display.main.systemHeight  + " " + transform.position.y);
+        if (!gameManager.IsPaused())
+        {
+            mousePosY = ToUnityCoordinates(Input.mousePosition.y) + posOffset;
+            transform.localScale = new Vector3(0.1f, Mathf.Max(minScaleY, 0.5f * Mathf.Min(mousePosY, 9f) / 9f), 1f);
+            if (Input.GetKeyDown(KeyCode.Space))
+                PluckString();
+            if (showLog)
+                Debug.Log(Input.mousePosition.y + " " + mousePosY + " " + Display.main.systemHeight + " " + transform.position.y);
+        }
     }
 
     private void PluckString()
