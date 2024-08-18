@@ -28,7 +28,7 @@ public class String : MonoBehaviour
         //for (int i = 0; i < notesLabels.Length; i++)
             //notesLabels[i].transform.position = new Vector3(notesLabels[i].transform.position.x, Ycoords[i] * (displayHeight / 10f) + displayHeight / 2f, 0f);
 
-        showLog = true;
+        //showLog = true;
     }
 
     void Update()
@@ -49,6 +49,8 @@ public class String : MonoBehaviour
         source.pitch = 1 + (transform.localScale.y - 0.1f) * 5 / 2;
         source.Play();
     }
+
+    public float GetYPos() => transform.localScale.y  * 8.5f / 0.5f - 4.5f;
 
     private float ToUnityCoordinates(float displayPos) => displayPos / displayHeight * 10f - 5f;
 }
