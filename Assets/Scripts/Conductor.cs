@@ -7,6 +7,15 @@ public class Conductor : MonoBehaviour
     // Song data including bpm and audio
     public SongData songData;
 
+    // Prefab of the note to spawn
+    public GameObject notePrefab;
+
+    // How many beats on the screen are showed
+    public float beatsShownInAdvance;
+
+    public Transform spawnPos;
+    public Transform removePos;
+
     // The offset to the first beat of the song in seconds
     public float firstBeatOffset;
 
@@ -31,7 +40,10 @@ public class Conductor : MonoBehaviour
     // Conductor instance
     public static Conductor instance;
 
-    public Note[] chart;
+    private Note[] chart;
+
+    //the index of the next note to be spawned
+    public int nextIndex = 0;
 
     void Awake()
     {
@@ -58,6 +70,8 @@ public class Conductor : MonoBehaviour
 
         // Start the music
         musicSource.Play();
+
+        nextIndex = 0;
     }
 
     // Update is called once per frame
@@ -68,5 +82,21 @@ public class Conductor : MonoBehaviour
 
         // Calculate the position in beats
         songPositionInBeats = songPosition / secPerBeat;
+
+        float currentBeat = songPositionInBeats + beatsShownInAdvance;
+
+        if (nextIndex < chart.Length && chart[nextIndex].beat < currentBeat)
+        {
+            Debug.Log(chart[nextIndex].beat + " " + currentBeat);
+            NoteMovement note = Instantiate(notePrefab, 
+                new Vector2(spawnPos.position.x, chart[nextIndex].position), 
+                Quaternion.identity).GetComponent<NoteMovement>();
+
+            //initialize the fields of the music note
+            note.beat = chart[nextIndex].beat;
+            note.posY = chart[nextIndex].position;
+
+            nextIndex++;
+        }
     }
 }
