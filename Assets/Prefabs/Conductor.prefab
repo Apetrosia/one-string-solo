@@ -84,6 +84,7 @@ MonoBehaviour:
   spawnPos: {fileID: 7325631719672727451}
   removePos: {fileID: 8974447877432995065}
   firstBeatOffset: 0
+  notesPositionsFile: {fileID: 4900000, guid: 366b3ac48c62f0142a837f12b880ed7b, type: 3}
   secPerBeat: 0
   songPosition: 0
   songPositionInBeats: 0

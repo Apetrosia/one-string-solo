@@ -19,6 +19,8 @@ public class Conductor : MonoBehaviour
     // The offset to the first beat of the song in seconds
     public float firstBeatOffset;
 
+    public TextAsset notesPositionsFile;
+
     [Header("Should be private later")]
     // TODO: make all of the variables below private after the game works
 
@@ -54,7 +56,7 @@ public class Conductor : MonoBehaviour
     void Start()
     {
         // Get the chart of the song
-        chart = ChartReader.ReadChart(songData.chart);
+        chart = FileReader.ReadChart(songData.chart, notesPositionsFile);
 
         // Load the AudioSource attached to the Conductor GameObject
         musicSource = GetComponent<AudioSource>();
@@ -65,13 +67,7 @@ public class Conductor : MonoBehaviour
         // Calculate the number of seconds in each beat
         secPerBeat = 60f / songData.bpm;
 
-        // Record the time when the music starts
-        dspSongTime = (float)AudioSettings.dspTime;
-
-        // Start the music
-        musicSource.Play();
-
-        nextIndex = 0;
+        StartSong();
     }
 
     // Update is called once per frame
@@ -98,5 +94,16 @@ public class Conductor : MonoBehaviour
 
             nextIndex++;
         }
+    }
+
+    public void StartSong()
+    {
+        nextIndex = 0;
+
+        // Record the time when the music starts
+        dspSongTime = (float)AudioSettings.dspTime;
+
+        // Start the music
+        musicSource.Play();
     }
 }
