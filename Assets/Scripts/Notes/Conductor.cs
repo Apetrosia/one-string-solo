@@ -60,11 +60,12 @@ public class Conductor : MonoBehaviour
         if (sl)
         {
             SelectSong(sl.GetSong());
-            Destroy(sl.gameObject);
+            //Destroy(sl.gameObject);
+            //Debug.LogWarning("No");
         }
         else
         {
-            Debug.LogWarning("No song selected");
+            Debug.LogWarning("No song selected, enjoy kuznechik");
         }
 
         // Get the chart of the song
