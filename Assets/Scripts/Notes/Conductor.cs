@@ -56,6 +56,17 @@ public class Conductor : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        SongLoader sl = FindObjectOfType<SongLoader>();
+        if (sl)
+        {
+            SelectSong(sl.GetSong());
+            Destroy(sl.gameObject);
+        }
+        else
+        {
+            Debug.LogWarning("No song selected");
+        }
+
         // Get the chart of the song
         chart = FileReader.ReadChart(songData.chart, notesPositionsFile);
 
@@ -107,5 +118,11 @@ public class Conductor : MonoBehaviour
 
         // Start the music
         musicSource.Play();
+    }
+
+    public void SelectSong(SongData song)
+    {
+        this.songData = song;
+        //songSelected = true;
     }
 }
