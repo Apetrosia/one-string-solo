@@ -30,6 +30,7 @@ public class SceneLoader : MonoBehaviour
         SongLoader sl = t.AddComponent<SongLoader>();
         sl.SetSong(song);
         Instantiate(t);
+        t.name = "LevelMusic";
         DontDestroyOnLoad(t);
     }
 }
