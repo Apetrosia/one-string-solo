@@ -864,12 +864,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2751910722542567133, guid: e8566e50ddd82a845997726ec6e149e2, type: 3}
       propertyPath: m_Name
-      value: LevelSelectButton (1)
+      value: DogWaltz
       objectReference: {fileID: 0}
     - target: {fileID: 4587944950348057833, guid: e8566e50ddd82a845997726ec6e149e2, type: 3}
       propertyPath: songData
       value: 
-      objectReference: {fileID: 11400000, guid: acbc06ea73d920d43b3efe553940b4a7, type: 2}
+      objectReference: {fileID: 11400000, guid: 4522fa2f5c3bd674aade92c00267561c, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1444,7 +1444,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2751910722542567133, guid: e8566e50ddd82a845997726ec6e149e2, type: 3}
       propertyPath: m_Name
-      value: LevelSelectButton
+      value: Kuznechik
       objectReference: {fileID: 0}
     - target: {fileID: 4587944950348057833, guid: e8566e50ddd82a845997726ec6e149e2, type: 3}
       propertyPath: songData
