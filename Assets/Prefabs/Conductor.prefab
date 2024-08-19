@@ -79,7 +79,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 876ec42b0932a484fa8b3081b585183d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  songData: {fileID: 0}
+  songData: {fileID: 11400000, guid: acbc06ea73d920d43b3efe553940b4a7, type: 2}
   beatsShownInAdvance: 6
   firstBeatOffset: 0
   notePrefab: {fileID: 205203380909206675, guid: a3ccc0d42412b374d80d6848a8751031, type: 3}
