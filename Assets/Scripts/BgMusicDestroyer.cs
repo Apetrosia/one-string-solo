@@ -6,8 +6,11 @@ public class BgMusicDestroyer : MonoBehaviour
 {
     private void Awake()
     {
-        var musicObj = DontDestroy.instance;
+        var musicObj = FindObjectOfType<DontDestroy>();
         if (musicObj != null)
+        {
             Destroy(musicObj.gameObject);
+            Debug.Log("bgm destroyed");
+        }
     }
 }

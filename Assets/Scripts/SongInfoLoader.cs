@@ -5,7 +5,7 @@ using TMPro;
 
 public class SongInfoLoader : MonoBehaviour
 {
-    [SerializeField] private SongData songData;
+    [SerializeField] public SongData songData;
     private TMP_Text text;
 
     void Start()
@@ -13,4 +13,6 @@ public class SongInfoLoader : MonoBehaviour
         text = GetComponentInChildren<TMP_Text>();
         text.text = songData.name.ToUpper() + " (" + songData.bpm + " BPM)";
     }
+
+    public SongData GetSong() => songData;
 }
