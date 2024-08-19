@@ -36,7 +36,7 @@ public class String : MonoBehaviour
         if (!gameManager.IsPaused())
         {
             mousePosY = ToUnityCoordinates(Input.mousePosition.y) + posOffset;
-            transform.localScale = new Vector3(0.1f, Mathf.Max(minScaleY, 0.5f * Mathf.Min(mousePosY, 9f) / 9f), 1f);
+            transform.localScale = new Vector3(transform.localScale.x, Mathf.Max(minScaleY, 0.5f * Mathf.Min(mousePosY, 9f) / 9f), 1f);
             if (Input.GetKeyDown(KeyCode.Space))
                 PluckString();
             if (showLog)
