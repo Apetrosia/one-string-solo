@@ -294,6 +294,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d14ff692148d6ee45a1105d24867108f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  grades:
+  - {fileID: 4352156618755659757, guid: fae7f8c4c1aca9f4682b389ef66190f7, type: 3}
+  - {fileID: 4565410988949166799, guid: eb9bf775b7699e3458c4a884e9afdb54, type: 3}
+  - {fileID: 5448141900430260761, guid: 85b01047ead96c84f94358aab5d6d97a, type: 3}
+  - {fileID: 3341795932568607172, guid: bc55c933a46780c48b3268b31f793a4d, type: 3}
+  - {fileID: 8715395300446355456, guid: bdb20a324e04a444b9447115f51ea727, type: 3}
 --- !u!61 &7835580294821836503
 BoxCollider2D:
   m_ObjectHideFlags: 0
