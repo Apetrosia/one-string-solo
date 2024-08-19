@@ -15,6 +15,8 @@ public class GameManager : MonoBehaviour
     [SerializeField] TMP_Text scoreText;
     private int score;
 
+    private int count;
+
     void Start()
     {
         stringObj = GameObject.Find("String").GetComponent<AudioSource>();
@@ -22,6 +24,8 @@ public class GameManager : MonoBehaviour
 
         score = 0;
         scoreText.text = "Score: 0";
+
+        count = 0;
     }
 
     void Update()
@@ -51,7 +55,7 @@ public class GameManager : MonoBehaviour
     {
         score += points;
         scoreText.text = "Score: " + score.ToString();
-        Debug.Log("ponts += " + points);
+        Debug.Log("ponts += " + points + " " + ++count);
     }
 
     public bool IsPaused() => pausePanel.activeSelf;

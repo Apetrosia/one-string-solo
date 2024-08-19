@@ -12,43 +12,48 @@ public class NoteDetection : MonoBehaviour
     private float multiplier;
     private GameManager gameManager;
 
+    private Stack<GameObject> notes;
+
     private float maxTime = 3f;
 
     void Start()
     {
         soloString = GameObject.FindAnyObjectByType<String>();
         gameManager = GameObject.FindObjectOfType<GameManager>();
-        noteDetected = false;
+        notes = new Stack<GameObject>();
     }
 
     
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space) && !noteDetected)
+        if (Input.GetKeyDown(KeyCode.Space))
         {
-            gameManager.AddScore(-500);
-            GradeFly(-500f);
+            if (notes.Count > 0)
+            {
+                multiplier = notes.Peek().GetComponent<CircleCollider2D>().radius;
+                float points = multiplier * (int)(3.3f - Mathf.Abs(notes.Peek().transform.position.x - transform.position.x) +
+                    3.3 - Mathf.Abs(notes.Peek().transform.position.y - soloString.GetYPos())) * point * 100;
+                gameManager.AddScore((int)points);
+                GradeFly(points);
+                GameObject.Destroy(notes.Pop().gameObject);
+            }
+            else
+            {
+                gameManager.AddScore(-500);
+                GradeFly(-500f);
+            }
         }
     }
 
-    private void OnTriggerStay2D(Collider2D collision)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        noteDetected = true;
-
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            multiplier = collision.GetComponent<CircleCollider2D>().radius;
-            float points = multiplier * (int)(3.3f - Mathf.Abs(collision.transform.position.x - transform.position.x) +
-                3.3 - Mathf.Abs(collision.transform.position.y - soloString.GetYPos())) * point * 100;
-            gameManager.AddScore((int)points);
-            GradeFly(points);
-        }
+        notes.Push(collision.gameObject);
     }
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        noteDetected = false;
-        //Debug.Log("Note, goodbye~");
+        if (notes.Count > 0)
+            notes.Pop();
     }
 
     private IEnumerator GradeFly(float points)
