@@ -55,7 +55,7 @@ public class GameManager : MonoBehaviour
     {
         score += points;
         scoreText.text = "Score: " + score.ToString();
-        Debug.Log("ponts += " + points + " " + ++count);
+        //Debug.Log("ponts += " + points + " " + ++count);
     }
 
     public bool IsPaused() => pausePanel.activeSelf;
