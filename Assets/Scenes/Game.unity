@@ -468,11 +468,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 458343867142041108, guid: 569680da2aa14e6438ea5a7de8ad10e2, type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.417
+      value: 0.396
       objectReference: {fileID: 0}
     - target: {fileID: 458343867142041108, guid: 569680da2aa14e6438ea5a7de8ad10e2, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.417
+      value: 0.396
       objectReference: {fileID: 0}
     - target: {fileID: 528894564438435017, guid: 569680da2aa14e6438ea5a7de8ad10e2, type: 3}
       propertyPath: m_AnchoredPosition.x
@@ -492,11 +492,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1526830834122011249, guid: 569680da2aa14e6438ea5a7de8ad10e2, type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.417
+      value: 0.396
       objectReference: {fileID: 0}
     - target: {fileID: 1526830834122011249, guid: 569680da2aa14e6438ea5a7de8ad10e2, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.417
+      value: 0.396
       objectReference: {fileID: 0}
     - target: {fileID: 1526830834122011249, guid: 569680da2aa14e6438ea5a7de8ad10e2, type: 3}
       propertyPath: m_AnchoredPosition.x
@@ -622,6 +622,14 @@ PrefabInstance:
       propertyPath: m_UiScaleMode
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 3568730942587180057, guid: 569680da2aa14e6438ea5a7de8ad10e2, type: 3}
+      propertyPath: m_ScreenMatchMode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3568730942587180057, guid: 569680da2aa14e6438ea5a7de8ad10e2, type: 3}
+      propertyPath: m_MatchWidthOrHeight
+      value: 0.5
+      objectReference: {fileID: 0}
     - target: {fileID: 4157277497088729034, guid: 569680da2aa14e6438ea5a7de8ad10e2, type: 3}
       propertyPath: m_Name
       value: UI
@@ -644,19 +652,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5735323531649243758, guid: 569680da2aa14e6438ea5a7de8ad10e2, type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.417
+      value: 0.396
       objectReference: {fileID: 0}
     - target: {fileID: 5735323531649243758, guid: 569680da2aa14e6438ea5a7de8ad10e2, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.417
+      value: 0.396
       objectReference: {fileID: 0}
     - target: {fileID: 5735480484867142945, guid: 569680da2aa14e6438ea5a7de8ad10e2, type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.417
+      value: 0.396
       objectReference: {fileID: 0}
     - target: {fileID: 5735480484867142945, guid: 569680da2aa14e6438ea5a7de8ad10e2, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.417
+      value: 0.396
       objectReference: {fileID: 0}
     - target: {fileID: 5735480484867142945, guid: 569680da2aa14e6438ea5a7de8ad10e2, type: 3}
       propertyPath: m_AnchoredPosition.x
@@ -701,6 +709,14 @@ PrefabInstance:
     - target: {fileID: 6075558853609654565, guid: 569680da2aa14e6438ea5a7de8ad10e2, type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7524372329217867404, guid: 569680da2aa14e6438ea5a7de8ad10e2, type: 3}
+      propertyPath: m_Camera
+      value: 
+      objectReference: {fileID: 710184073}
+    - target: {fileID: 7524372329217867404, guid: 569680da2aa14e6438ea5a7de8ad10e2, type: 3}
+      propertyPath: m_RenderMode
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7823359363455000168, guid: 569680da2aa14e6438ea5a7de8ad10e2, type: 3}
       propertyPath: m_SizeDelta.x
@@ -808,13 +824,21 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 3430532434763613950, guid: 6902d35ce9cddca479c0e7fa1af17ea7, type: 3}
+      propertyPath: m_ScreenMatchMode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3430532434763613950, guid: 6902d35ce9cddca479c0e7fa1af17ea7, type: 3}
+      propertyPath: m_MatchWidthOrHeight
+      value: 0.5
+      objectReference: {fileID: 0}
     - target: {fileID: 3688367354517814439, guid: 6902d35ce9cddca479c0e7fa1af17ea7, type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.417
+      value: 0.396
       objectReference: {fileID: 0}
     - target: {fileID: 3688367354517814439, guid: 6902d35ce9cddca479c0e7fa1af17ea7, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.417
+      value: 0.396
       objectReference: {fileID: 0}
     - target: {fileID: 3862748184891677440, guid: 6902d35ce9cddca479c0e7fa1af17ea7, type: 3}
       propertyPath: m_IsActive
@@ -852,6 +876,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: StringObj
       objectReference: {fileID: 0}
+    - target: {fileID: 7317798021462720592, guid: 6902d35ce9cddca479c0e7fa1af17ea7, type: 3}
+      propertyPath: m_Camera
+      value: 
+      objectReference: {fileID: 710184073}
     - target: {fileID: 7317798021462720592, guid: 6902d35ce9cddca479c0e7fa1af17ea7, type: 3}
       propertyPath: m_AdditionalShaderChannelsFlag
       value: 25
