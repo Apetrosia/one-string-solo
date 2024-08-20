@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: df6b2e511d199514d83d15014a2bea40, type: 3}
   m_Name: Asian street food
   m_EditorClassIdentifier: 
-  bpm: 110
-  music: {fileID: 8300000, guid: 91eed03a62e5ea7498ccbc06113b0ae6, type: 3}
+  bpm: 80
+  music: {fileID: 8300000, guid: 8c4ae24f0d1acbc44a1e61edfc326ebd, type: 3}
   chart: {fileID: 4900000, guid: 8987c8b4c55d9f14d93ad1ccfd85afa1, type: 3}
