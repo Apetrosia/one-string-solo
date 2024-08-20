@@ -40,7 +40,8 @@ public class NoteDetection : MonoBehaviour
                     3.3 - Mathf.Abs(notes.Peek().transform.position.y - soloString.GetYPos())) * point * 100;
                 gameManager.AddScore((int)points);
                 StartCoroutine(GradeFly(points));
-                GameObject.Destroy(notes.Peek().gameObject);
+                StartCoroutine(notes.Peek().GetComponent<NoteMovement>().DestroyNote());
+                //GameObject.Destroy(notes.Peek().gameObject);
             }
             else
             {
