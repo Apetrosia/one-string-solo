@@ -43,7 +43,7 @@ public class GameManager : MonoBehaviour
 
     void Update()
     {
-        if (!gameWon)
+        /*if (!gameWon)
         {
             if (Input.GetKeyDown(KeyCode.P))
             {
@@ -60,7 +60,7 @@ public class GameManager : MonoBehaviour
                     Time.timeScale = 1.0f;
                 }
             }
-        }
+        }*/
 
         if (Input.GetKeyDown(KeyCode.R))
             SceneManager.LoadScene(currentScene);

@@ -760,6 +760,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 3862748184891677440, guid: 6902d35ce9cddca479c0e7fa1af17ea7, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4104304350311351739, guid: 6902d35ce9cddca479c0e7fa1af17ea7, type: 3}
       propertyPath: m_Layer
       value: 5
@@ -783,10 +787,6 @@ PrefabInstance:
     - target: {fileID: 5788325955078849611, guid: 6902d35ce9cddca479c0e7fa1af17ea7, type: 3}
       propertyPath: m_Layer
       value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 5901965886003228332, guid: 6902d35ce9cddca479c0e7fa1af17ea7, type: 3}
-      propertyPath: m_Color.a
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7287762309070686195, guid: 6902d35ce9cddca479c0e7fa1af17ea7, type: 3}
       propertyPath: m_Name
