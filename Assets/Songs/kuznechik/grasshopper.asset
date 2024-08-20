@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: df6b2e511d199514d83d15014a2bea40, type: 3}
-  m_Name: kuznechik
+  m_Name: grasshopper
   m_EditorClassIdentifier: 
   bpm: 90
   music: {fileID: 8300000, guid: 0d037c9b16531a245bff605ef47baae0, type: 3}
