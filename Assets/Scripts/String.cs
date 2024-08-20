@@ -82,5 +82,5 @@ public class String : MonoBehaviour
 
     public float GetYPos() => transform.localScale.y  * 8.5f / 0.5f - 4.5f;
 
-    private float ToUnityCoordinates(float displayPos) => displayPos / displayHeight * 10f - 5f;
+    private float ToUnityCoordinates(float displayPos) => displayPos / Display.main.systemHeight * 10f - 5f;
 }
