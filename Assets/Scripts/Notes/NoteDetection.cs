@@ -12,7 +12,7 @@ public class NoteDetection : MonoBehaviour
     private float multiplier;
     private GameManager gameManager;
 
-    private Stack<GameObject> notes;
+    private Queue<GameObject> notes;
 
     private GameObject canvas;
     [SerializeField] TMP_Text[] grades;
@@ -24,13 +24,13 @@ public class NoteDetection : MonoBehaviour
         soloString = GameObject.FindAnyObjectByType<String>();
         gameManager = GameObject.FindObjectOfType<GameManager>();
         canvas = GameObject.Find("UI");
-        notes = new Stack<GameObject>();
+        notes = new Queue<GameObject>();
     }
 
     
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (!gameManager.IsPaused() && Input.GetKeyDown(KeyCode.Space))
         {
             if (notes.Count > 0)
             {
@@ -40,7 +40,7 @@ public class NoteDetection : MonoBehaviour
                     3.3 - Mathf.Abs(notes.Peek().transform.position.y - soloString.GetYPos())) * point * 100;
                 gameManager.AddScore((int)points);
                 StartCoroutine(GradeFly(points));
-                GameObject.Destroy(notes.Pop().gameObject);
+                GameObject.Destroy(notes.Peek().gameObject);
             }
             else
             {
@@ -52,13 +52,13 @@ public class NoteDetection : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        notes.Push(collision.gameObject);
+        notes.Enqueue(collision.gameObject);
     }
 
     private void OnTriggerExit2D(Collider2D collision)
     {
         if (notes.Count > 0)
-            notes.Pop();
+            notes.Dequeue();
         if (!noteDetected)
         {
             gameManager.AddScore(-1000);
@@ -93,7 +93,8 @@ public class NoteDetection : MonoBehaviour
                 break;
         }
 
-        TMP_Text obj = Instantiate(text, new Vector3(r.Next(-200, 200) + Display.main.systemWidth / 2, 100, 0),
+        int d = Display.main.systemWidth / 6 * 2;
+        TMP_Text obj = Instantiate(text, new Vector3(r.Next(-d, d) + Display.main.systemWidth / 2, 100, 0),
             Quaternion.Euler(new Vector3(0, 0, r.Next(-30, 30))));
         obj.transform.SetParent(canvas.transform);
 

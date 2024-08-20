@@ -88,6 +88,7 @@ MonoBehaviour:
   notesPositionsFile: {fileID: 4900000, guid: 366b3ac48c62f0142a837f12b880ed7b, type: 3}
   songPositionInBeats: 0
   musicSource: {fileID: 0}
+  afterWin: {fileID: 8300000, guid: 98158bc5e9e31b74bb45fd8f0ea7b0d7, type: 3}
 --- !u!82 &783909250978136478
 AudioSource:
   m_ObjectHideFlags: 0

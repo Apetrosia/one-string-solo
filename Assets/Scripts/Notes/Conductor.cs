@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Conductor : MonoBehaviour
 {
+    private GameManager gameManager;
+
     [Header("Adjustable settings")]
     // Song data including bpm and audio
     [SerializeField] private SongData songData;
@@ -39,6 +41,7 @@ public class Conductor : MonoBehaviour
 
     // An AudioSource attached to this GameObject that will play the music.
     public AudioSource musicSource;
+    [SerializeField] AudioClip afterWin;
 
     // Conductor instance
     public static Conductor instance;
@@ -56,6 +59,8 @@ public class Conductor : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        gameManager = GameObject.FindAnyObjectByType<GameManager>();
+
         SongLoader sl = FindObjectOfType<SongLoader>();
         if (sl)
         {
@@ -86,26 +91,45 @@ public class Conductor : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        // Calculate the position in seconds
-        songPosition = (float)(AudioSettings.dspTime - dspSongTime - firstBeatOffset);
-
-        // Calculate the position in beats
-        songPositionInBeats = songPosition / secPerBeat;
-
-        float currentBeat = songPositionInBeats + beatsShownInAdvance;
-
-        if (nextIndex < chart.Length && chart[nextIndex].beat < currentBeat)
+        if (!gameManager.IsPaused())
         {
-            //Debug.Log(chart[nextIndex].beat + " " + currentBeat);
-            NoteMovement note = Instantiate(notePrefab, 
-                new Vector2(spawnPos.position.x, chart[nextIndex].position), 
-                Quaternion.identity).GetComponent<NoteMovement>();
+            // Calculate the position in seconds
+            songPosition = (float)(AudioSettings.dspTime - dspSongTime - firstBeatOffset);
 
-            //initialize the fields of the music note
-            note.beat = chart[nextIndex].beat;
-            note.posY = chart[nextIndex].position;
+            // Calculate the position in beats
+            songPositionInBeats = songPosition / secPerBeat;
 
-            nextIndex++;
+            float currentBeat = songPositionInBeats + beatsShownInAdvance;
+
+            if (nextIndex < chart.Length && chart[nextIndex].beat < currentBeat)
+            {
+                //Debug.Log(chart[nextIndex].beat + " " + currentBeat);
+                NoteMovement note = Instantiate(notePrefab,
+                    new Vector2(spawnPos.position.x, chart[nextIndex].position),
+                    Quaternion.identity).GetComponent<NoteMovement>();
+
+                //initialize the fields of the music note
+                note.beat = chart[nextIndex].beat;
+                note.posY = chart[nextIndex].position;
+
+                nextIndex++;
+            }
+        }
+
+        if (!musicSource.isPlaying && !gameManager.IsPaused())
+        {
+            if (gameManager.GetScore() < chart.Length * 1000)
+                gameManager.SetWin(0);
+            else if (gameManager.GetScore() < chart.Length * 1250)
+                gameManager.SetWin(1);
+            else if (gameManager.GetScore() < chart.Length * 1400)
+                gameManager.SetWin(2);
+            else
+                gameManager.SetWin(3);
+            musicSource.loop = true;
+            musicSource.clip = afterWin;
+            musicSource.Play();
+            GameObject.Destroy(this);
         }
     }
 
@@ -126,4 +150,8 @@ public class Conductor : MonoBehaviour
         this.songData = song;
         //songSelected = true;
     }
+
+    public void PauseMusic() => musicSource.Pause();
+
+    public void ResumeMusic() => musicSource.Play();
 }
