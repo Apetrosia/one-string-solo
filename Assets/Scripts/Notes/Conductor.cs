@@ -118,7 +118,7 @@ public class Conductor : MonoBehaviour
 
         if (!musicSource.isPlaying && !gameManager.IsPaused())
         {
-            if (gameManager.GetScore() < chart.Length * 1000)
+            if (gameManager.GetScore() < chart.Length * 900)
                 gameManager.SetWin(0);
             else if (gameManager.GetScore() < chart.Length * 1250)
                 gameManager.SetWin(1);

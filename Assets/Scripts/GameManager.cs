@@ -9,8 +9,6 @@ public class GameManager : MonoBehaviour
 {
     private Conductor conductor;
 
-    [SerializeField] Image startPanel;
-
     [SerializeField] GameObject winPanel;
     [SerializeField] TMP_Text totalScore;
     [SerializeField] TMP_Text gradeText;
@@ -104,8 +102,8 @@ public class GameManager : MonoBehaviour
             case 3:
                 gradeText.text = "PERFECT";
                 gradeText.fontSize = 300;
-                gradeText.transform.rotation = Quaternion.Euler(new Vector3(0, 0, 20));
                 gradeText.faceColor = new Color(142, 255, 75);
+                gradeText.transform.rotation = Quaternion.Euler(new Vector3(0, 0, 20));
                 break;
         }
     }

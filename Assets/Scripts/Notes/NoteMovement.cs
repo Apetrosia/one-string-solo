@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class NoteMovement : MonoBehaviour
 {
+    [SerializeField] Color[] colors;
     private GameManager gameManager;
     // Beat this note should be played on
     public float beat;
@@ -12,6 +13,8 @@ public class NoteMovement : MonoBehaviour
 
     void Start()
     {
+        System.Random r = new System.Random();
+        GetComponent<SpriteRenderer>().color = colors[r.Next(colors.Length)];
         gameManager = GameObject.FindAnyObjectByType<GameManager>();
     }
 
