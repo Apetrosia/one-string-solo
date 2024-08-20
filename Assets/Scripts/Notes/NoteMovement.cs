@@ -27,7 +27,7 @@ public class NoteMovement : MonoBehaviour
                 (Conductor.instance.beatsShownInAdvance - (beat - Conductor.instance.songPositionInBeats)) / Conductor.instance.beatsShownInAdvance);
 
         // Remove itself when out of the screen (remove line).
-        if (transform.position.x > Conductor.instance.removePos.position.x - 0.001f)
+        if (transform.position.x > Conductor.instance.removePos.position.x - 0.00001f)
         {
             Destroy(gameObject);
         }
